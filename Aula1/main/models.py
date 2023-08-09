@@ -5,10 +5,10 @@ from django.utils import timezone
 
 
 class Planet(models.Model):
-    name = models.CharField(max_length=150)
+    name = models.CharField(max_length=150) #varchar
     climate = models.CharField(max_length=50)
     created = models.DateTimeField(default=timezone.now()) #decimal do mysql
-    diameter = models.DecimalField(max_digits=20, decimal_places=2)
+    diameter = models.DecimalField(max_digits=20, decimal_places=2) 
     gravity = models.IntegerField() #int do mysql
     population = models.BigIntegerField() #bigint do mysql
     

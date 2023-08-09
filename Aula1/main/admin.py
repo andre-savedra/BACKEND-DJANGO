@@ -4,8 +4,8 @@ from .models import * #importando o People e o Planet!!!
 # Register your models here.
 
 class detPeople(admin.ModelAdmin):
-    list_display = ('id', 'name')
-    list_display_links = ('id',)
+    list_display = ('id', 'name', 'hairColor')
+    list_display_links = ('id', 'name',)
     search_fields = ('name',)
     list_per_page = 10
 
@@ -16,7 +16,7 @@ admin.site.register(People,detPeople)
 
 class detPlanet(admin.ModelAdmin):
     list_display = ('id', 'name')
-    list_display_links = ('id',)
+    list_display_links = ('id', 'name',)
     search_fields = ('name',)
     list_per_page = 10
 
