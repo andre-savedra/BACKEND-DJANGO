@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-
 from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -22,14 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-bj10r+p3+(_fmwpvdhngccan_2#!2)rfw*v7dwsp=_v5^dq4qp'
+SECRET_KEY = 'django-insecure-(815x@%ypkm@-0353(xui_4tp0928ne+c_0hx5xpb$&8geo%y_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
-CORS_ALLOW_ALL_ORIGINS = True
 
 # Application definition
 
@@ -46,6 +44,8 @@ INSTALLED_APPS = [
     'djoser',
     'main'
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -136,15 +136,14 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny'
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 100,
+    'PAGE_SIZE': 20,
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication'
-    ],
+        'rest_framework_simplejwt.authentication.JWTAuthentication'      
+    ]
 }
-
 
 SIMPLE_JWT = {
    'AUTH_HEADER_TYPES': ("Bearer",),
-   'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
-   'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+   'ACCESS_TOKEN_LIFETIME': timedelta(minutes=2),
+   'REFRESH_TOKEN_LIFETIME': timedelta(minutes=10),
 }

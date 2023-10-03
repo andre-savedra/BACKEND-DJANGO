@@ -1,4 +1,3 @@
-
 from .views import *
 from rest_framework.routers import DefaultRouter
 from django.urls import path
@@ -13,5 +12,4 @@ router.register(r'payment',PaymentView)
 router.register(r'availability',AvailabilityView)
 
 urlpatterns = router.urls
-urlpatterns.append( path('tripScore/<int:tripId>/', ScoreAverageView.as_view(), name='trip-score-average'))
-
+urlpatterns.append( path('tripScore/<int:tripId>/', ScoreAverageView.as_view(), name='trip-score-average') )

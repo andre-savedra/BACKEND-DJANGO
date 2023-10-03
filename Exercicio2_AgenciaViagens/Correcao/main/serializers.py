@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from .models import *
-from django.contrib.auth.models import User
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -16,6 +15,7 @@ class TripSerializer(serializers.ModelSerializer):
         many = True
 
 class ImageSerializer(serializers.ModelSerializer):
+    tripFK = TripSerializer(read_only=True)
     class Meta:
         model = Image
         fields = '__all__'
@@ -40,7 +40,7 @@ class BookingSerializer(serializers.ModelSerializer):
         fields = '__all__'
         many = True
 
-class PaymentSerializer(serializers.ModelSerializer):
+class PaymentSerializer(serializers.ModelSerializer):    
     class Meta:
         model = Payment
         fields = '__all__'
@@ -51,4 +51,3 @@ class AvailabilitySerializer(serializers.ModelSerializer):
         model = Availability
         fields = '__all__'
         many = True
-

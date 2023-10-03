@@ -7,16 +7,16 @@ class adminCategory(admin.ModelAdmin):
     search_fields = ('name',)
     list_per_page = 10
 
-admin.site.register(Category, adminCategory)
+admin.site.register(Category,adminCategory)
 
 
 class adminTrip(admin.ModelAdmin):
     list_display = ('id', 'title', 'city', 'createdDate')
     list_display_links = ('id', 'title', 'city', 'createdDate',)
-    search_fields = ('title', 'city', 'address')
+    search_fields = ('title', 'city', 'address',)
     list_per_page = 10
 
-admin.site.register(Trip, adminTrip)
+admin.site.register(Trip,adminTrip)
 
 
 class adminImage(admin.ModelAdmin):
@@ -62,4 +62,3 @@ class adminAvailability(admin.ModelAdmin):
     list_per_page = 10
 
 admin.site.register(Availability, adminAvailability)
-
